@@ -11,23 +11,39 @@
 
 4. Add the file gripper_plugin.cc in the folder one step up from your GAZEBO_PLUGIN_PATH which in this case would be "/home/user/src/Firmware/Tools/sitl_gazebo/src"
 
-5. Type in TERMINAL:
+5. Add the following under plugins to the CMakeLists.txt file located at "/home/user/src/Firmware/Tools/sitl_gazebo/src"
+	# -----GripperPlugin
+	find_package(roscpp REQUIRED)
+	find_package(std_msgs REQUIRED)
+	include_directories(${roscpp_INCLUDE_DIRS})
+	include_directories(${std_msgs_INCLUDE_DIRS})	
+	find_package(gazebo REQUIRED)
+	include_directories(${GAZEBO_INCLUDE_DIRS})
+	link_directories(${GAZEBO_LIBRARY_DIRS})
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+
+	add_library(gripper_plugin SHARED src/gripper_plugin.cc)
+	target_link_libraries(gripper_plugin ${GAZEBO_libraries} ${roscpp_LIBRARIES})
+	# -----/GripperPlugin
+
+6. Type in TERMINAL:
 	cd ~/home/user/src/Firmware/Tools/sitl_gazebo/Build  (GAZEBO_PLUGIN_PATH)
 	cmake ../
 	make
 
-5. Add the folder "simulation_control" to your "catkin_ws/src" folder.
+7. Add the folder "simulation_control" to your "catkin_ws/src" folder.
 
-6. Type in TERMINAL: (building the catkin workspace)
+8. Type in TERMINAL: (building the catkin workspace)
 	cd ~/catkin_ws
 	catkin build
 
-7. Double check if you're missing any dependencies like pysci etc. and install them if not. Then build again.
+9. Double check if you're missing any dependencies like pysci etc. and install them if not. Then build again.
+   If you want it to work there can be no errors in the build.
 
-7. Type in terminal: (adding gazebo model path)
+10. Type in terminal: (adding gazebo model path)
 	sudo nano ~/.bashrc
 
-8. Add the following line to the end of your GAZEBO_MODEL_PATH:
+11. Add the following line to the end of your GAZEBO_MODEL_PATH:
 	:/home/user/catkin_ws/src/simulation_control/src/models
 
    For example if it looks like this:
@@ -36,9 +52,11 @@
    After editing it should look like this:
 	export GAZEBO_MODEL_PATH=:/home/user/src/Firmware/Tools/sitl_gazebo/models:/home/user/catkin_ws/src/simulation_control/src/models
 
-7. Add the file f550_amazing to "/home/user/src/Firmware/posix-configs/SITL/init/lpe".
+12. Add the file f550_amazing to "/home/user/src/Firmware/posix-configs/SITL/init/lpe".
 
-8. From https://github.com/Pateman16/ROS_simulation_control which is the package this is based on:
+---------------------------------------------------
+
+13. To start: https://github.com/Pateman16/ROS_simulation_control which is the package this is based on:
 
 open three new terminals
 
