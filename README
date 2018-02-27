@@ -12,26 +12,26 @@
 4. Add the file gripper_plugin.cc in the folder one step up from your GAZEBO_PLUGIN_PATH which in this case would be "/home/user/src/Firmware/Tools/sitl_gazebo/src"
 
 5. Type in TERMINAL:
-			cd ~/home/user/src/Firmware/Tools/sitl_gazebo/Build  (GAZEBO_PLUGIN_PATH)
-			cmake ../
-			make
+	cd ~/home/user/src/Firmware/Tools/sitl_gazebo/Build  (GAZEBO_PLUGIN_PATH)
+	cmake ../
+	make
 
 5. Add the folder "simulation_control" to your "catkin_ws/src" folder.
 
 6. Type in TERMINAL: (building the catkin workspace)
-			cd ~/catkin_ws
-			catkin build
+	cd ~/catkin_ws
+	catkin build
 
 7. Type in terminal: (adding gazebo model path)
-			sudo nano ~/.bashrc
+	sudo nano ~/.bashrc
 
 8. Add the following line to the end of your GAZEBO_MODEL_PATH:
-			:/home/user/catkin_ws/src/simulation_control/src/models
+	:/home/user/catkin_ws/src/simulation_control/src/models
 
    For example if it looks like this:
-			export GAZEBO_MODEL_PATH=:/home/user/src/Firmware/Tools/sitl_gazebo/models
+	export GAZEBO_MODEL_PATH=:/home/user/src/Firmware/Tools/sitl_gazebo/models
 
    After editing it should look like this:
-			export GAZEBO_MODEL_PATH=:/home/user/src/Firmware/Tools/sitl_gazebo/models:/home/user/catkin_ws/src/simulation_control/src/models
+	export GAZEBO_MODEL_PATH=:/home/user/src/Firmware/Tools/sitl_gazebo/models:/home/user/catkin_ws/src/simulation_control/src/models
 
 7. Add the file f550_amazing to "/home/user/src/Firmware/posix-configs/SITL/init/lpe".
