@@ -22,6 +22,8 @@
 	cd ~/catkin_ws
 	catkin build
 
+7. Double check if you're missing any dependencies like pysci etc. and install them if not. Then build again.
+
 7. Type in terminal: (adding gazebo model path)
 	sudo nano ~/.bashrc
 
