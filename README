@@ -1,5 +1,6 @@
 ...OBS! the name user below refers to your own username that can be seen by opening the terminal ctrl+alt+t and writing pwd...
 
+The following is based on having a working simulation with sitl_gazebo from openuav.us.
 
 1. Open the terminal and write ""printenv | grep GAZEBO"
 
