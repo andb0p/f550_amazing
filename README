@@ -1,6 +1,6 @@
-___________________________________________________________________________________________________________________
---- The package simulation_control is a modified version of https://github.com/Pateman16/ROS_simulation_control ---
-___________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________
+The package simulation_control is a modified version of https://github.com/Pateman16/ROS_simulation_control
+___________________________________________________________________________________________________________
 
 ...OBS! the name user below refers to your own username that can be seen by opening the terminal ctrl+alt+t and writing pwd...
 
