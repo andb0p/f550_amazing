@@ -1,3 +1,7 @@
+___________________________________________________________________________________________________________________
+--- The package simulation_control is a modified version of https://github.com/Pateman16/ROS_simulation_control ---
+___________________________________________________________________________________________________________________
+
 ...OBS! the name user below refers to your own username that can be seen by opening the terminal ctrl+alt+t and writing pwd...
 
 The following is based on having a working simulation with sitl_gazebo from openuav.us.
@@ -57,13 +61,10 @@ The following is based on having a working simulation with sitl_gazebo from open
 
 ---------------------------------------------------
 
-13. To start: https://github.com/Pateman16/ROS_simulation_control which is the package this is based on:
+13. To start:
 
 open three new terminals
-
-terminal1: roslaunch simulation_control posix_sitl.launch
-
+	terminal1: roslaunch simulation_control posix_sitl.launch
 wait a little while
-
-terminal2: roslaunch simulation_control px4.launch fcu_url:="udp://:14550@127.0.0.1:14557"
-terminal3: roslaunch simulation_control simulation_control.launch 
+	terminal2: roslaunch simulation_control px4.launch fcu_url:="udp://:14550@127.0.0.1:14557"
+	terminal3: roslaunch simulation_control simulation_control.launch 
